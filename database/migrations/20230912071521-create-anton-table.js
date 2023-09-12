@@ -1,6 +1,6 @@
 "use strict";
 
-const table = "users";
+const table = "antons";
 
 module.exports = {
   up: async function (queryInterface, Sequelize) {
@@ -11,7 +11,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      name: {
+      full_name: {
         type: Sequelize.STRING,
         allowNull: true,
       },
@@ -19,23 +19,24 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: true,
       },
-      status: {
-        type: Sequelize.ENUM("Pending", "Approved", "Rejected"),
+      dateOfBirth: {
+        type: Sequelize.STRING,
         allowNull: false,
-        defaultValue: "Pending",
       },
-      archived: {
-        type: Sequelize.BOOLEAN,
+      atnNumber: {
+        type: Sequelize.INTEGER,
         allowNull: false,
-        defaultValue: false,
+      },
+      profileImage: {
+        type: Sequelize.STRING,
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.INTEGER,
+        type: Sequelize.DATE,
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.INTEGER,
+        type: Sequelize.DATE,
       },
     });
   },
